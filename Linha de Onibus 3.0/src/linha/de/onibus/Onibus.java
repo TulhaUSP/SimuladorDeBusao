@@ -170,7 +170,7 @@ public class Onibus {
             tempo_viagem_seg += tempo_onibus;
         }
         
-        public void setTempo_Tot_Embarque(ArrayList<Passageiros> passageiros)
+        public void setTempo_Tot_Embarque(ArrayList<Passageiro> passageiros)
         {
             for(int i=0; i<passageiros.size(); i++)
             {

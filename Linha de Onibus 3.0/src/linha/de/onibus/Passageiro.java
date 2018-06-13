@@ -2,7 +2,7 @@ package linha.de.onibus;
 
 import java.util.Random;
 
-public class Passageiros {
+public class Passageiro {
     
     private int tempo_embarque, origem, destino, tempo_viagem, tempo_espera;
     private boolean deficiente;
@@ -58,9 +58,9 @@ public class Passageiros {
         this.deficiente = deficiente;
     }
     
-    public Passageiros()
+    public Passageiro()
     {
-        tempo_embarque = rn.nextInt(15)+5;
+        this.tempo_embarque = rn.nextInt(15)+5;
         if(rn.nextInt(100)<5)
         {
             deficiente = true;

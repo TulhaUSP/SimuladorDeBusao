@@ -21,11 +21,10 @@ public class Paradas {
         return num_esperando;
     }
 
-    public void setNum_passageiros(int num_passageiros) {
-        this.num_esperando = num_passageiros;
+    public void setNum_esperando(int num_esperando) {
+        this.num_esperando = num_esperando;
     }
     
-    //PQ UM ARRAYLIST?
     public Paradas(boolean terminal, int passageiros)
     {
         this.terminal = terminal;
@@ -40,8 +39,6 @@ public class Paradas {
             num_esperando = rn.nextInt(15);
         }
        
-        int pessoasFicaram = 0;
-        int distanciaDaParadaAtual = 0;//Definir a paradaAtual a ser verificada
         
         if(passageiros + num_esperando > bus.getEspaco())
         {

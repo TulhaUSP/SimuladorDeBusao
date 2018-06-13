@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class LinhaDeOnibus {
 
     public static Paradas[] paradas = null;
-    public static ArrayList<Passageiros> passageiros = new ArrayList<>(); 
+    public static ArrayList<Passageiro> passageiros = new ArrayList<>(); 
     public static Random rn = new Random();
     //static int nParadas = rn.nextInt(20)+5; //cria número de paradas randomicamente
     static int nParadas = 3;
@@ -30,19 +30,14 @@ public class LinhaDeOnibus {
         BusaoDoLevi.setTempo_Tot_Embarque(passageiros);
         for (int t = 1; t<=BusaoDoLevi.getTempo();t++)
         {
-            distance += 1;
+            distance += BusaoDoLevi.getVelocidade();
             
-            //for (int i = 0; i<nParadas; i++)
-            //{
+           
 
-                if (distance >= dist_total[indice]){
-                    System.out.println("Passou pela parada "+ (indice+1));
+            if (distance >= dist_total[indice]){
+                System.out.println("Passou pela parada "+ (indice+1));
                     indice++;
-                }
-            
-            //}
-            //Colocar quantos passageiros entraram e quantos saíram
-
+            }
             
             
             System.out.println("tempo: " + t);
@@ -54,8 +49,8 @@ public class LinhaDeOnibus {
     public static void criaParadas()
     {
        
-        int distancia;
-        paradas = new Paradas[nParadas];
+        int distancia; 
+       paradas = new Paradas[nParadas];
         
         for(int i=0; i<nParadas; i++)
         {
@@ -84,9 +79,9 @@ public class LinhaDeOnibus {
     {
         for (int j = 0; j < paradas.length; j++)
         {
-            for (int delta = 0; delta < paradas[j].getNum_passageiros(); delta++)
+            for (int delta = 0; delta < paradas[j].getNum_esperando(); delta++)
             {
-                Passageiros p = new Passageiros();
+                Passageiro p = new Passageiro();
                 passageiros.add(p);
             }
         }
