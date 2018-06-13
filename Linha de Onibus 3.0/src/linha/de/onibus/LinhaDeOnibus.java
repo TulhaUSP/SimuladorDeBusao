@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+     GPL-2.0-or-later
  */
 package linha.de.onibus;
 
@@ -13,8 +11,8 @@ public class LinhaDeOnibus {
     public static Paradas[] paradas = null;
     public static ArrayList<Passageiro> passageiros = new ArrayList<>(); 
     public static Random rn = new Random();
-    //static int nParadas = rn.nextInt(20)+5; //cria número de paradas randomicamente
-    static int nParadas = 3;
+    static int nParadas = rn.nextInt(20)+5; //cria número de paradas randomicamente
+    //static int nParadas = 3;
     public static int[] dist_total = new int[nParadas];
     static int indice = 0;
     
@@ -24,15 +22,15 @@ public class LinhaDeOnibus {
         criaParadas();
         
         Onibus BusaoDoLevi = new Onibus();
-        BusaoDoLevi.setVelocidade(1.0);
+        BusaoDoLevi.setVelocidade(20.0);
         BusaoDoLevi.setEspaco(40);
         BusaoDoLevi.setTempo_Onibus(paradas);
         BusaoDoLevi.setTempo_Tot_Embarque(passageiros);
+
+
         for (int t = 1; t<=BusaoDoLevi.getTempo();t++)
         {
             distance += BusaoDoLevi.getVelocidade();
-            
-           
 
             if (distance >= dist_total[indice]){
                 System.out.println("Passou pela parada "+ (indice+1));
@@ -40,8 +38,8 @@ public class LinhaDeOnibus {
             }
             
             
-            System.out.println("tempo: " + t);
-            System.out.println("distancia: " + distance);
+           // System.out.println("tempo: " + t);
+            //System.out.println("distancia: " + distance);
         }
         
     }

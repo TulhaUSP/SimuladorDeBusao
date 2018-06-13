@@ -25,7 +25,7 @@ public class Paradas {
         this.num_esperando = num_esperando;
     }
     
-    public Paradas(boolean terminal, int passageiros)
+    public Paradas(boolean terminal, ArrayList<Passageiro> passageiros)
     {
         this.terminal = terminal;
         
@@ -40,9 +40,9 @@ public class Paradas {
         }
        
         
-        if(passageiros + num_esperando > bus.getEspaco())
+        if(passageiros.size() + num_esperando > bus.getEspaco())
         {
-            num_esperando = bus.getEspaco() - passageiros;
+            num_esperando = bus.getEspaco() - passageiros.size();
         }
        
   /*

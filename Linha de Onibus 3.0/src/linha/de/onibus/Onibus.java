@@ -7,10 +7,10 @@ package linha.de.onibus;
 import java.util.ArrayList;
 /**
  *
- * @author a10723670
+ * @author José Luis, Tulha e Levi
  */
 public class Onibus {
-    	private double velocidade;
+  private double velocidade;
     
 	private String conservacao;
     
@@ -24,161 +24,125 @@ public class Onibus {
     
 	private int tempo_viagem_seg;
         
-        private int tempo_onibus;
-        
-        private int tempo_tot_embarque;
-        
-        
-        public void Onibus()
-        {
-            tempo_onibus = 0;
-            tempo_tot_embarque = 0;
-        }
-    
-    
+  private int tempo_onibus;
+  
+  private int tempo_tot_embarque;
+  
+  
+  public void Onibus()
+  {
+      tempo_onibus = 0;
+      tempo_tot_embarque = 0;
+  }
+
+
 
 	public double getVelocidade()
-        {
-            return velocidade;                 
+  {
+      return velocidade;                 
     
 	}
     
     
 
-	public String getConservacao()
-    	{
-            return conservacao;
+  public String getConservacao()
+	{
+      return conservacao;
     
 	}
     
     
 	
 	public String getTamanho()
-    	{
-            return tamanho;
+	{
+      return tamanho;
     
 	}
     
     
 
 	public boolean getAdaptacao()
-  	{
-            return adaptacao;               
-               
-    
+	{
+      return adaptacao;               
 	}
     
     
 	
 	public int getEspaco()
-  	{
-            return espaco;
+	{
+      return espaco;
             
 	}
     
     
 
 	public int getPosicao()
-  	{
-        
-            return posicao;
+	{   
+      return posicao;
 	}
     
     
 
 	public int getTempo()
-  	{
-        
-            return tempo_viagem_seg;
+	{        
+     return tempo_viagem_seg;
 	}
     
-    
-	
-	/*
-        public double getVelocidadeImprevisto()
-  	{
-        
-            
-	}
-        
-    
-    
-
-	public int getQuantEmbarca()
-  	{
-            
-    
-	}
-    
-    
-
-	public int getQuantDesembarca()
-  	{
-        
-    
-	}
-        */
-
-
-	public void setVelocidade(double velocidade)
-  	{
-            this.velocidade=velocidade;
-    
+  public void setVelocidade(double velocidade)
+	{
+      this.velocidade=velocidade;    
 	}
     
     
 
 	public void setConservacao(String conservacao)
-  	{
-            this.conservacao=conservacao;
+	{
+    this.conservacao=conservacao;
     
 	}
     
     
 	
 	public void setTamanho(String tamanho)
-  	{
-            this.tamanho=tamanho;
+  {
+    this.tamanho=tamanho;
     
 	}
     
     
 
 	public void setAdaptacao(boolean adaptacao)
-  	{
-            this.adaptacao=adaptacao;
+  {
+     this.adaptacao=adaptacao;
     
 	}
     
     
 	
 	public void setEspaco(int espaco)
-  	{
-            this.espaco=espaco;
+  {
+      this.espaco=espaco;
     
 	}
     
-    
-
-
         
-        public void setTempo_Onibus(Paradas[] paradas)
-        {
-            int distancia = (paradas[paradas.length-1].getPosicao()) - (paradas[0].getPosicao());
-            tempo_onibus = (int) (distancia/velocidade);
-            
-            tempo_viagem_seg += tempo_onibus;
-        }
-        
-        public void setTempo_Tot_Embarque(ArrayList<Passageiro> passageiros)
-        {
-            for(int i=0; i<passageiros.size(); i++)
-            {
-                tempo_tot_embarque += passageiros.get(i).getTempo_embarque();
-            }
-            
-            tempo_viagem_seg += tempo_tot_embarque;
-        }
+  public void setTempo_Onibus(Paradas[] paradas)
+  {
+      int distancia = (paradas[paradas.length-1].getPosicao()) - (paradas[0].getPosicao());
+      tempo_onibus = (int) (distancia/velocidade);
+      
+      tempo_viagem_seg += tempo_onibus;
+  }
+  
+  public void setTempo_Tot_Embarque(ArrayList<Passageiro> passageiros)
+  {
+      for(int i=0; i<passageiros.size(); i++)
+      {
+          tempo_tot_embarque += passageiros.get(i).getTempo_embarque();
+      }
+      
+      tempo_viagem_seg += tempo_tot_embarque;
+  }
     
             
 }
