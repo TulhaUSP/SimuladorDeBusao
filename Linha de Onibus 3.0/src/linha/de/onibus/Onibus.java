@@ -26,14 +26,13 @@ public class Onibus {
   private int tempo_tot_embarque;
 
 
-  public void Onibus()
+ /* public void Onibus()
   {
       this.tempo_onibus = 0;
       this.tempo_tot_embarque = 0;
   }
 
-
-
+*/
 	public double getVelocidade()
   {
       return velocidade;
@@ -67,12 +66,12 @@ public class Onibus {
 	}
 
 
-
+/*
 	public int getPosicao()
 	{
       return posicao;
 	}
-
+*/
     public void setVelocidade(double velocidade)
         {
       this.velocidade=velocidade;

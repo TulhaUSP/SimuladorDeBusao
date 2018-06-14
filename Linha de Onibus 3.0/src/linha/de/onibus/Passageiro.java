@@ -51,7 +51,7 @@ public class Passageiro {
     public void setTempo_espera(int tempo_espera) {
         this.tempo_espera = tempo_espera;
     }
-     */
+     
     public boolean isDeficiente() {
         return deficiente;
     }
@@ -59,7 +59,7 @@ public class Passageiro {
     public void setDeficiente(boolean deficiente) {
         this.deficiente = deficiente;
     }
-    
+    */
     public Passageiro(int origem, int destino)
     {
         this.tempo_embarque = rn.nextInt(15)+5;

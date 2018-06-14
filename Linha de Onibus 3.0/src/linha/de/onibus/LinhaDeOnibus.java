@@ -5,7 +5,7 @@ package linha.de.onibus;
 
 import java.util.Random;
 import java.util.ArrayList;
- 
+import java.util.Scanner;
 
 public class LinhaDeOnibus {
 
@@ -33,7 +33,7 @@ public class LinhaDeOnibus {
             
         }
         //cria ArrayList base de passageiros:
-        for (int pas = 0; pas < rn.nextInt(120)+30;pas++)//determina numero de passageiros na linha
+        for (int pas = 0; pas < rn.nextInt(150)+30;pas++)//determina numero de passageiros na linha
         {
             int od = 0;
             int od2 = 0;
@@ -48,18 +48,23 @@ public class LinhaDeOnibus {
     public static void main(String[] args) {
         int distance = 0;
         int t = 0;
+        Scanner in = new Scanner(System.in);
         
         LinhaDeOnibus l = new LinhaDeOnibus();//mais importante adição
         Onibus BusaoDoLevi = new Onibus();
-        BusaoDoLevi.setVelocidade(20.0);
-        BusaoDoLevi.setEspaco(40);
+        System.out.println("Insira a velocidade constante do onibus(metros por segundo)");
+        BusaoDoLevi.setVelocidade(in.nextDouble());
+        System.out.println("Insira a capacidade de passageiros do onibus");
+        BusaoDoLevi.setEspaco(in.nextInt());
         
         for (int u = 0; u < passageiros_linha.size(); u++){//loop que adiciona os passageiros que embarcam na primeira parada
             if (passageiros_linha.get(u).getOrigem()==0){
                 passageiros_onibus.add(passageiros_linha.get(u));
             }
         }
-        
+        System.out.println();
+        System.out.println("O onibus saiu do terminal com "+ passageiros_onibus.size()+ " passageiros.");
+        System.out.println();
         while (distance <= posicao_paradas.get(posicao_paradas.size() - 1)) //esse while se tornou muito mais importante: será necessário atualizar o numero de passageiros no onibus por ele
         {
             int entraram = 0;
@@ -92,7 +97,7 @@ public class LinhaDeOnibus {
                     
                 }
                 t+= tempoParado;//adiciona tempo de embarque da parada ao tempo total
-                System.out.println("Entraram "+ entraram+ " passageiros e sairam "+ desceram + ". O processo levou "+tempoParado+" segundos");
+                System.out.println("Entraram "+ entraram+ " passageiros e sairam "+ desceram + ". O onibus ficou parado "+tempoParado+" segundos");
                 System.out.println();
                 indice++;
             }
