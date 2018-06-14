@@ -12,28 +12,30 @@ public class Passageiro {
     public int getTempo_embarque() {
         return tempo_embarque;
     }
-
+    /*
     public void setTempo_embarque(int tempo_embarque) {
         this.tempo_embarque = tempo_embarque;
         
     }
-
+    */
     public int getOrigem() {
         return origem;
     }
-
+    /*
     public void setOrigem(int origem) {
         this.origem = origem;
     }
-
+    */
     public int getDestino() {
         return destino;
     }
-
+    /*Setters e getters desnecessarios no codigo atual
     public void setDestino(int destino) {
         this.destino = destino;
     }
-
+    
+     
+    
     public int getTempo_viagem() {
         return tempo_viagem;
     }
@@ -49,7 +51,7 @@ public class Passageiro {
     public void setTempo_espera(int tempo_espera) {
         this.tempo_espera = tempo_espera;
     }
-
+     */
     public boolean isDeficiente() {
         return deficiente;
     }
@@ -58,13 +60,17 @@ public class Passageiro {
         this.deficiente = deficiente;
     }
     
-    public Passageiro()
+    public Passageiro(int origem, int destino)
     {
         this.tempo_embarque = rn.nextInt(15)+5;
+        this.origem = origem;
+        this.destino = destino; 
+        
+        
         if(rn.nextInt(100)<5)
         {
             deficiente = true;
-            tempo_embarque *= 4;
+            this.tempo_embarque *= 4;
         }
     }
     
